@@ -3,7 +3,11 @@
     <head>
         <title>Solidarity Onboarding Zine</title>
     </head>
-    <body>
-        <p>Hi</p>
+    <body> 
+        <section class="gallery">
+            {% for image in collections.pages %}
+                <figure><img src="{{image}}" alt=""></figure>
+            {% endfor %}
+        </section>
     </body>
 </html>
