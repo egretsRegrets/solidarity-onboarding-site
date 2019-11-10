@@ -4,7 +4,8 @@
   "description": "digital version of solidarity onboarding zine",
   "main": "index.js",
   "scripts": {
-    "production": "npx @11ty/eleventy"
+    "production": "npx @11ty/eleventy",
+    "watch": "npx @11ty/eleventy --serve"
   },
   "author": "egretsRegrets",
   "license": "ISC",

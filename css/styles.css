@@ -1,16 +1,32 @@
 body {
     margin: 0;
-  }
-  
-  ul {
+}
+
+h1, h2 {
+    font-weight: 400;
+}
+
+ul {
     padding: 0;
     margin: 0;
     list-style: none;
-  }
+}
+
+.intro {
+    width: 792px;
+    height: 306px;
+    margin: auto;
+    margin-bottom: 3vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.intro h1 {
+    font-size: 28px;
+}
 
 .page-template-container {
     position: relative;
-    margin-bottom: 8vh;
+    margin-bottom: 6vh;
 }
 .page-template-container:last-of-type:not(first-of-type) {
     margin-bottom: calc((100vh - 612px) / 2);
@@ -51,8 +67,8 @@ body {
     padding-right: calc((100% - 792px) / 2);
 }
 
-@media (min-height: 613px) {
-    .page-template-container:first-of-type {
-        margin-top: calc((100vh - 612px) / 2);
+@media (min-height: 306px) {
+    .intro {
+        margin-top: calc((100vh - 306px) / 2);
     }
 }
