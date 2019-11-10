@@ -5,8 +5,8 @@
     </head>
     <body> 
         <section class="gallery">
-            {% for image in collections.pages %}
-                <figure><img src="{{image}}" alt=""></figure>
+            {% for pageTemplate in collections.pages %}
+                {{pageTemplate}}
             {% endfor %}
         </section>
     </body>
