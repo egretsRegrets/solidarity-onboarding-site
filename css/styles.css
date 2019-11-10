@@ -5,10 +5,15 @@ body {
   ul {
     padding: 0;
     margin: 0;
+    list-style: none;
   }
 
 .page-template-container {
     position: relative;
+    margin-bottom: 8vh;
+}
+.page-template-container:last-of-type:not(first-of-type) {
+    margin-bottom: calc((100vh - 612px) / 2);
 }
 .page-image-container {
     display: flex;
@@ -24,7 +29,30 @@ body {
     justify-content: center;
 }
 .doodle-images-container ul {
-    width: 792px;
+    width: 100%;
     display: flex;
-    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.doodle-images-container ul::-webkit-scrollbar { 
+    display: none;
+}
+.doodle-images-container li {
+    width: 792px;
+    margin-left: 8vw;
+}
+.doodle-images-container li:first-of-type {
+    margin-left: calc((100% - 792px) / 2);
+}
+.doodle-images-container li:last-of-type:not(first-of-type) {
+    padding-right: calc((100% - 792px) / 2);
+}
+
+@media (min-height: 613px) {
+    .page-template-container:first-of-type {
+        margin-top: calc((100vh - 612px) / 2);
+    }
 }
