@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+.page-template-container {
+    position: relative;
+}
+.page-image-container {
+    display: flex;
+    justify-content: center;
+}
+.doodle-images-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+.doodle-images-container ul {
+    width: 792px;
+    display: flex;
+    overflow: scroll;
+}

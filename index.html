@@ -2,11 +2,14 @@
 <html>
     <head>
         <title>Solidarity Onboarding Zine</title>
+        <link href="css/styles.css" rel="stylesheet">
     </head>
     <body> 
         <section class="gallery">
             {% for pageTemplate in collections.pages %}
-                {{pageTemplate}}
+                <div class="page-template-container">
+                    {{pageTemplate}}
+                </div>
             {% endfor %}
         </section>
     </body>

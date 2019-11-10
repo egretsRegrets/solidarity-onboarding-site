@@ -3,7 +3,7 @@ const fg = require('fast-glob');
 const pageImages = fg.sync(['assets/pages/*']);
 const doodleArray = [];
 
-const firstPageOffset = 7;
+const firstPageOffset = 1;
 
 pageImages.forEach((_, pageNumber) => {
     const doodlePath = 'assets/doodles/page_' + (pageNumber + firstPageOffset).toString() + '/*';
@@ -40,4 +40,5 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addPassthroughCopy('assets');
+    eleventyConfig.addPassthroughCopy('css');
 }
