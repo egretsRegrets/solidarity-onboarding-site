@@ -98,7 +98,7 @@ function doInstruction() {
 }
 
 function tick() {
-    this.ticking = true;
+    ticking = true;
     setTimeout(() => {
         doInstruction();
         lastInstruction = null;
