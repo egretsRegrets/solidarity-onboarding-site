@@ -6,16 +6,20 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">     
     </head>
     <body>
-        <section class="intro">
+        <section class="intro" id="intro_section">
                 <h1>Welcome to 🤝Solidarity Onboarding </h1>
                 <h2>Activists, artists, and creators from across the globe have annotated this collection of anti-labor statements.  Together we're crafting a counter narrative directly over the words employed to keep us from uniting.</h2>
         </section>
         <section class="gallery">
             {% for pageTemplate in collections.pages %}
-                <div class="page-template-container">
-                    {{pageTemplate}}
-                </div>
+                {{pageTemplate}}
             {% endfor %}
         </section>
+
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

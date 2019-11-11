@@ -1,6 +1,18 @@
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html:-webkit-scrollbar { 
+    display: none;
+}
+
 body {
     margin: 0;
+    scroll-behavior: smooth;
+
 }
+
 
 h1, h2 {
     font-weight: 400;
