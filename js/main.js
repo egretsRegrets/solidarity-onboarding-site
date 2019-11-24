@@ -51,14 +51,13 @@ function scrollPage() {
 }
 
 function scrollDoodle() {
-    const firstDoodleOffset = $('#page_1-doodle_1').offset().left;
+    const firstDoodleOffset = $(`#page_${currentPage}-doodle_1`).offset().left;
     $(`#page_${currentPage}-ul`).animate({
         scrollLeft: $(`#page_${currentPage}-doodle_${doodleState[currentPage - 1].currentDoodle}`).offset().left - firstDoodleOffset
     }, 800);
 }
 
 function doInstruction() {
-    console.log('do instruction: ', lastInstruction);
     if (lastInstruction !== null) {
         switch(lastInstruction.direction) {
             case 'down':
@@ -124,9 +123,7 @@ function getIntendedScroll(deltaX, deltaY) {
 }
 
 function handleScroll(e) {
-    // console.log('handleScroll: ', e);
     const scrollInstructions = getIntendedScroll(e.deltaX, e.deltaY);
-    // console.log('scroll instructions: ', scrollInstructions);
     cueInstruction(scrollInstructions);
 }
 
