@@ -59,7 +59,7 @@ function scrollDoodle() {
 
 function doInstruction() {
     if (lastInstruction !== null) {
-        switch(lastInstruction.direction) {
+        switch(lastInstruction) {
             case 'down':
                 if (currentPage < pages) {
                     currentPage = currentPage + 1;
@@ -98,13 +98,11 @@ function doInstruction() {
 
 function tick() {
     ticking = true;
+    doInstruction();
+    lastInstruction = null;
     setTimeout(() => {
-        doInstruction();
-        lastInstruction = null;
-        setTimeout(() => {
-            ticking = false;
-        }, 800);
-    }, 300);
+        ticking = false;
+    }, 800);
 }
 
 function cueInstruction(instruction) {
@@ -119,7 +117,7 @@ function cueInstruction(instruction) {
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function getIntendedScroll(deltaX, deltaY) {
-    return Math.abs(deltaX) > Math.abs(deltaY) ? {direction: deltaX > 0 ? 'right' : 'left'} : {direction: deltaY > 0 ? 'down' : 'up'};
+    return Math.abs(deltaX) > Math.abs(deltaY) ? deltaX > 0 ? 'right' : 'left' : deltaY > 0 ? 'down' : 'up';
 }
 
 function handleScroll(e) {
@@ -128,7 +126,21 @@ function handleScroll(e) {
 }
 
 function handleScrollKeys(e) {
-    console.log('handleScrollKey: ', e);
+    if (e.key) {
+        switch(e.key) {
+            case 'ArrowUp':
+                cueInstruction('up');
+                break;
+            case 'ArrowRight':
+                cueInstruction('right');
+                break;
+            case 'ArrowDown':
+                cueInstruction('down');
+                break;
+            case 'ArrowLeft':
+                cueInstruction('left');
+        }
+    }
 }
 
 function preventDefault(e) {
@@ -142,7 +154,10 @@ function preventDefault(e) {
 
 function preventDefaultForScrollKeys(e) {
     if (keys[e.keyCode]) {
-        preventDefault(e);
+        e = e || window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
         handleScrollKeys(e);
         return false;
     }
