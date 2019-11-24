@@ -47,6 +47,10 @@ ul {
     display: flex;
     justify-content: center;
 }
+.page-image-container img {
+    max-width: 792px;
+    max-height: 612px;
+}
 .doodle-images-container {
     position: absolute;
     top: 0;
@@ -77,6 +81,11 @@ ul {
 }
 .doodle-images-container li:last-of-type:not(first-of-type) {
     padding-right: calc((100% - 792px) / 2);
+}
+
+.doodle-images-container img {
+    max-width: 792px;
+    max-height: 612px;
 }
 
 @media (min-height: 306px) {
